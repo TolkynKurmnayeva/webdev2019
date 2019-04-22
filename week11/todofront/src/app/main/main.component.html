@@ -1,19 +1,34 @@
+<!-- <div>
+    <ng-container *ngIf="!loading">
+        <h2>LOADING</h2>
+    </ng-container>
+    <div class="cont">
+        <ng-container *ngIf="loading">
+            <div>
+                <div *ngFor="let a of taskLists" (click)="getTasks(a)"  class="pk"> 1 + {{a.name}}</div>
+            </div>
+        </ng-container>
+    </div>
+    <br/>
+    <h2>Tasks:</h2>
+    <div>
+        <div *ngFor="let t of tasks">{{t.id}} - {{t.name}} - {{t.due_on}} - {{t.status}}</div>
+    </div>
+    <BR/>
+    <h2>List's Info</h2>
+    <BR/>
+    <div>
+        <h2>{{list1}}</h2>
+    </div>
+</div> -->
 
-<h1>hello</h1>
+<h2>All Tasklists</h2>
 <ol>
-<li *ngFor="let taskList of taskLists">
-    <h2 (click)="getTasks(taskList)">{{taskList.name}}
-        
-    </h2>
-    
-</li>
-</ol>
+  <li *ngFor="let tl of l">
+      <h2 (click) = 'taskListClick()'>{{tl.name}}</h2>
+  </li>
 
-<div *ngFor="let task of tasks">
-    <h2>Task:  {{task.name}}</h2>
-    Created at : {{task.created_at}}
-    <br>
-    Status : {{task.status}}
-    <br>
-    Due on : {{task.due_on}}
-</div>
+  <!-- <li *ngFor="let tl of TaskList">
+    <h3(click) = 'oneTaskListClick()'>{{tl.name}} </h3> 
+  </li> -->
+</ol>

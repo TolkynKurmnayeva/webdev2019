@@ -13,22 +13,25 @@ export class MainComponent implements OnInit {
 
   constructor(private provider: ProviderService) { }
 
-  public taskLists: TaskList[] = [];
-  public loading = false;
+  public l: TaskList[] = [];
+  public loading = true;
 
   public tasks: Task[] = [];
 
   ngOnInit() {
     this.provider.getTaskLists().then(res => {
-      this.taskLists = res;
+      this.l = res;
       console.log(res);
     });
-  }
+  } 
+  taskListClicked = () => {
+    console.log(this.l)
+   }
 
-  getTasks(taskList: TaskList){
-    this.provider.getTasks(taskList).then(res1 => {
-      this.tasks = res1;
-    });
-  }
+  // getTasks(taskList: TaskList){
+  //   this.provider.getTasks(taskList).then(res => {
+  //     this.tasks = res;
+  //   });
+  // }
 
 }
