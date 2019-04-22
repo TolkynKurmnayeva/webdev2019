@@ -4,10 +4,11 @@ from django.http import  HttpResponse,JsonResponse
 
 
 # Create your views here.
+
 def task_list (request) :
-    tasks = TaskList.objects.all()
-    json_tasks = [m.to_json() for m in tasks]
-    return JsonResponse (json_tasks, safe=False)
+    taskLists = TaskList.objects.all()
+    json_taskLists = [m.to_json() for m in taskLists]
+    return JsonResponse (json_taskLists, safe=False)
 
 def task_detail (request, pk):
     taskList = TaskList.objects.get(id=pk)
@@ -17,9 +18,9 @@ def task_detail (request, pk):
 
 def task_get (request, pk):
     taskLists = TaskList.objects.all()
-    tasks = []
+    tls = []
     for i in range(pk):
-        tasks.append(taskLists[i])
-    json_tasks = [t.to_json() for t in tasks]
+        tls.append(taskLists[i])
+    json_tasks = [t.to_json() for t in tls]
     return JsonResponse(json_tasks, safe=False)
 
