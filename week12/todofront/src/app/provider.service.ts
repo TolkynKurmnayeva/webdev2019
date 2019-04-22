@@ -16,23 +16,8 @@ export class ProviderService extends MainService {
     super(http);
   
   }
-
   getAllTaskLists(): Observable<any>{
-    return this.http.get(this.baseurl + '/tasklists/',
-    {headers: this.httpHeaders});
-  }
-  updateTasklist(tasklist): Observable<any> {
-    const body = {id: tasklist.id , name: tasklist.name };
-    return this.http.put(this.baseurl + '/tasklists/' + tasklist.id + '/', body,
-    {headers: this.httpHeaders});
-  }
-  createTasklist(tasklist): Observable<any> {
-    const body = {id: tasklist.id , name: tasklist.name};
-    return this.http.post(this.baseurl + '/tasklists/', body,
-    {headers: this.httpHeaders});
-  }
-  deleteTasklist(id): Observable<any> {
-    return this.http.delete(this.baseurl + '/tasklists/' + id + '/',
+    return this.http.get(this.baseurl + '/tasklists/', 
     {headers: this.httpHeaders});
   }
 
