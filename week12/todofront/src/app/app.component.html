@@ -1,13 +1,6 @@
 <h2>taskLists</h2>
-<ol>
-    <li *ngFor="let t of taskLists">
-        <h2 (click)="tlClicked(t)">{{t.name}} </h2>
-    </li>
-</ol>
-
-Name <input type="text" [(ngModel)]="selectedTaskList.name"/><br>
-<button  (click)="updateTaskList()"> PUT </button>
-<button (click)="createTaskList()"> POST </button>
-<button (click)="deleteTaskList()"> DELETE </button>
-
-
+<ul>
+    <div >
+        <h2>{{taskLists[0].name}} </h2>
+    </div>
+</ul>

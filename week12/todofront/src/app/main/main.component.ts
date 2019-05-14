@@ -19,16 +19,16 @@ export class MainComponent implements OnInit {
   public tasks: Task[] = [];
 
   ngOnInit() {
-    // this.provider.getTaskLists().then(res => {
-    //   this.taskLists = res;
-    //   console.log(res);
-    // });
+    this.provider.getTaskLists().then(res => {
+      this.taskLists = res;
+      console.log(res);
+    });
   }
 
-  // getTasks(taskList: TaskList){
-  //   this.provider.getTasks(taskList).then(res1 => {
-  //     this.tasks = res1;
-  //   });
-  // }
+  getTasks(taskList: TaskList){
+    this.provider.getTasks(taskList).then(res1 => {
+      this.tasks = res1;
+    });
+  }
 
 }
